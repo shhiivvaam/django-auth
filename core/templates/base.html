@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Django Auth Project</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
-</head>
+    {% load static %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/styles.css' %}"
+    />
+  </head>
 
-<body>
+  <body>
     <nav>
-        <a href="{% url 'dashboard' %}">Dashboard</a>
-        <a href="{% url 'profile' %}">Profile</a>
-        <a href="{% url 'logout' %}">Logout</a>
+      <a href="{% url 'dashboard' %}">Dashboard</a>
+      <a href="{% url 'profile' %}">Profile</a>
+      <a href="{% url 'logout' %}">Logout</a>
     </nav>
     {% block content %} {% endblock %}
-</body>
-
+  </body>
 </html>
