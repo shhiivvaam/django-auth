@@ -87,3 +87,18 @@ class CustomPasswordResetConfirmView(PasswordResetConfirmView):
 
 class CustomPasswordResetCompleteView(PasswordResetCompleteView):
     template_name = 'registration/password_reset_complete.html'
+
+# def PasswordResetView(request):
+#     template_name = 'registration/password_reset.html'
+#     email_template_name = 'registration/password_reset_email.html'
+#     success_url = reverse_lazy('password_reset_done.html')
+
+# def PasswordResetDoneView(request):
+#     template_name = 'registration/password_reset_done.html'
+
+# def PasswordResetConfirmView(request):
+#     template_name = 'registration/password_reset_confirm.html'
+#     success_url = reverse_lazy('password_reset_complete.html')
+
+# def PasswordResetCompleteView(request):
+#     template_name = 'registration/password_reset_complete.html'
