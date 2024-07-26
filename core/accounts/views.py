@@ -1,6 +1,4 @@
 from django.shortcuts import render, redirect
-
-# Create your views here.
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm, AuthenticationForm
 from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
@@ -8,10 +6,11 @@ from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
+from .forms import CustomUserCreationForm
 
 def signup(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
@@ -20,8 +19,23 @@ def signup(request):
             login(request, user)
             return redirect('dashboard')
     else:
-        form = UserCreationForm()
+        form = CustomUserCreationForm()
     return render(request, 'registration/signup.html', {'form': form})
+
+
+# def signup(request):
+#     if request.method == 'POST':
+#         form = UserCreationForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             username = form.cleaned_data.get('username')
+#             raw_password = form.cleaned_data.get('password1')
+#             user = authenticate(username=username, password=raw_password)
+#             login(request, user)
+#             return redirect('dashboard')
+#     else:
+#         form = UserCreationForm()
+#     return render(request, 'registration/signup.html', {'form': form})
 
 def custom_login(request):
     if request.method == 'POST':
