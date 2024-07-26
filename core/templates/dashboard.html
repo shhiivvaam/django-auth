@@ -1,6 +1,12 @@
-{% extends "base.html" %} {% block content %}
-<h2>Hi, {{ user.username }}!</h2>
-<p>Welcome to your dashboard.</p>
-<p><a href="{% url 'profile' %}">Profile</a></p>
-<p><a href="{% url 'password_change' %}">Change Password</a></p>
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <h2 class="text-center">Dashboard</h2>
+        <p class="text-center">Hi, {{ user.username }}!</p>
+        <a href="{% url 'profile' %}" class="btn btn-info btn-block">Profile</a>
+        <a href="{% url 'password_change' %}" class="btn btn-warning btn-block">Change Password</a>
+        <a href="{% url 'logout' %}" class="btn btn-danger btn-block">Logout</a>
+    </div>
+</div>
 {% endblock %}

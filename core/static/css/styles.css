@@ -1,9 +1,17 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
 }
 nav {
     margin-bottom: 20px;
 }
+
 nav a {
     margin-right: 10px;
+}
+h2 {
+    margin-bottom: 20px;
+}
+.form-group {
+    margin-bottom: 15px;
 }

@@ -1,8 +1,14 @@
-{% extends "base.html" %} {% block content %}
-<h2>Profile</h2>
-<p>Username: {{ user.username }}</p>
-<p>Email: {{ user.email }}</p>
-<p>Date Joined: {{ user.date_joined }}</p>
-<p>Last Updated: {{ user.last_login }}</p>
-<p><a href="{% url 'password_change' %}">Change Password</a></p>
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <h2 class="text-center">Profile</h2>
+        <p><strong>Username:</strong> {{ user.username }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Date Joined:</strong> {{ user.date_joined }}</p>
+        <p><strong>Last Updated:</strong> {{ user.last_login }}</p>
+        <a href="{% url 'password_change' %}" class="btn btn-warning btn-block">Change Password</a>
+        <a href="{% url 'dashboard' %}" class="btn btn-secondary btn-block">Back to Dashboard</a>
+    </div>
+</div>
 {% endblock %}
