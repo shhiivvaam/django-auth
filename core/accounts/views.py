@@ -75,7 +75,7 @@ def logout_view(request):
 class CustomPasswordResetView(PasswordResetView):
     template_name = 'registration/password_reset.html'
     email_template_name = 'registration/password_reset_email.html'
-    success_url = 'password_reset_done/'
+    success_url = '/accounts/password_reset_done/'
 
 class CustomPasswordResetDoneView(PasswordResetDoneView):
     template_name = 'registration/password_reset_done.html'
